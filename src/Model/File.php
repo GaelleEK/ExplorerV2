@@ -9,7 +9,7 @@ class File {
     private $id;
     private $slug;
     private $name;
-    private $content;
+    private $url;
     private $created_at;
 
     public function getName(): ?string
@@ -23,23 +23,15 @@ class File {
         return $this;
     }
 
-    public function getContent (): ?string
+    public function getUrl (): ?string
     {
-        return $this->content;
+        return $this->url;
     }
 
-    public function setContent (string $content): self
+    public function setUrl (string $url): self
     {
-        $this->content = $content;
+        $this->url = $url;
         return $this;
-    }
-
-    public function getExcerpt(): ?string
-    {
-        if ($this->content === null) {
-            return null;
-        }
-        return nl2br(htmlentities(Text::excerpt($this->content, 60)));
     }
 
     public function getCreatedAt(): DateTime

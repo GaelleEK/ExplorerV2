@@ -1,24 +1,24 @@
 <?php return array (
   'root' => 
   array (
-    'pretty_version' => '1.0.0+no-version-set',
-    'version' => '1.0.0.0',
+    'pretty_version' => 'dev-master',
+    'version' => 'dev-master',
     'aliases' => 
     array (
     ),
-    'reference' => NULL,
+    'reference' => '5dd6ca78691ede232c53fd037fcda702bdb948f0',
     'name' => 'acs/project-explorer',
   ),
   'versions' => 
   array (
     'acs/project-explorer' => 
     array (
-      'pretty_version' => '1.0.0+no-version-set',
-      'version' => '1.0.0.0',
+      'pretty_version' => 'dev-master',
+      'version' => 'dev-master',
       'aliases' => 
       array (
       ),
-      'reference' => NULL,
+      'reference' => '5dd6ca78691ede232c53fd037fcda702bdb948f0',
     ),
     'altorouter/altorouter' => 
     array (
@@ -28,6 +28,15 @@
       array (
       ),
       'reference' => '127f6e96998708a31ef32252985bea82e3b03888',
+    ),
+    'fakerphp/faker' => 
+    array (
+      'pretty_version' => 'v1.12.0',
+      'version' => '1.12.0.0',
+      'aliases' => 
+      array (
+      ),
+      'reference' => '9aa6c9e289860951e6b4d010c7a841802d015cd8',
     ),
     'filp/whoops' => 
     array (

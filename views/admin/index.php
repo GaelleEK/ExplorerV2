@@ -1,8 +1,11 @@
 
 <?php
 
+use App\Auth;
 use App\Connection;
 use App\Table\FileTable;
+
+Auth::check();
 
 $pdo = Connection::getPDO();
 

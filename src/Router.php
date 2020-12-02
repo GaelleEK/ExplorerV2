@@ -50,8 +50,18 @@ class Router {
     {
         $match = $this->router->match();
         $view = $match['target'];
-        require $this->viewPath . $view . '.php';
-
+        $router = $this;
+        $isAdmin = str_contains($view, 'admin/');
+        $layout = $isAdmin ? 'admin\layouts\default' : 'explorer\layouts\default';
+        try {
+        ob_start();
+        require $this->viewPath .DIRECTORY_SEPARATOR. $view . '.php';
+        $content = ob_get_clean();
+            require $this->viewPath .DIRECTORY_SEPARATOR. $layout . '.php';
+        } catch (ForbiddenException $e){
+            header('Location: '. $this->url('login'));
+            exit();
+        }
         return $this;
     }
 

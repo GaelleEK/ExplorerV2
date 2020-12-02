@@ -1,7 +1,8 @@
 <?php
 namespace App\Table;
 use App\Model\File;
-
+use App\Model\Post;
+use App\PaginatedQuery;
 
 
 final class FileTable extends Table {
@@ -14,7 +15,7 @@ final class FileTable extends Table {
         $this->update([
             'name' => $file->getName(),
             'slug' => $file->getSlug(),
-            'content' => $file->getContent(),
+            'url' => $file->getUrl(),
             'created_at' => $file->getCreatedAt()->format('Y-m-d H:i:s')
         ], $file->getID());
 
@@ -26,14 +27,23 @@ final class FileTable extends Table {
         $id = $this->create([
             'name' => $file->getName(),
             'slug' => $file->getSlug(),
-            'content' => $file->getContent(),
+            'url' => $file->getUrl(),
             'created_at' => $file->getCreatedAt()->format('Y-m-d H:i:s')
         ]);
         $file->setID($id);
 
     }
 
+    public function findPaginated ()
+    {
+        $paginatedQuery = new PaginatedQuery(
+            "SELECT * FROM {$this->table} ORDER BY created_at DESC",
+            "SELECT COUNT(id) FROM {$this->table}",
+            $this->pdo);
+        $posts = $paginatedQuery->getItems(File::class);
 
+        return [$posts, $paginatedQuery];
+    }
 
 
 

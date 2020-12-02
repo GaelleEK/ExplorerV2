@@ -28,6 +28,10 @@ class ComposerStaticInite72992e071c2b46b14d2cfd7812b116f
         array (
             'Psr\\Log\\' => 8,
         ),
+        'F' => 
+        array (
+            'Faker\\' => 6,
+        ),
         'A' => 
         array (
             'App\\' => 4,
@@ -54,6 +58,10 @@ class ComposerStaticInite72992e071c2b46b14d2cfd7812b116f
         'Psr\\Log\\' => 
         array (
             0 => __DIR__ . '/..' . '/psr/log/Psr/Log',
+        ),
+        'Faker\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/fakerphp/faker/src/Faker',
         ),
         'App\\' => 
         array (
